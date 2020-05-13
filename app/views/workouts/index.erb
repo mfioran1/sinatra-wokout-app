@@ -1,0 +1,13 @@
+<h1>Workouts</h1>
+
+    <h4><a href="/users/<%=current_user.slug%>">Go to Workout Profile</a></h4>
+    <h4><a href="/workouts/new">Record a new Workout</a></h4>
+    <h4><a href="/logout">Logout</a></h4>
+
+<h2>Public Workout Feed</h2>
+
+<% Workout.all.each do |workout| %>
+    <a href="/workouts/<%=workout.id%>"><%= workout.user.username %> - <%= workout.content %> - <%= workout.level %></a>
+    <br/>
+
+<% end %>    

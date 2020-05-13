@@ -1,0 +1,25 @@
+<h1>Log in to input your information</h1>
+
+<form action="/login" method="post">
+
+    <h2>Please enter your information below:</h2>
+    <br/>
+
+    <% if flash.has?(:message) %>
+        <%= flash[:message] %>
+    <% end %>
+    <br/>
+    <br/>
+    <label>Username:</label>
+    <input type="text" name="username">
+    <br/>
+    
+    <label>Password:</label>
+    <input type="password" name="password">
+    <br/>
+
+    <input type="submit" value="login">
+</form>
+<br/>
+
+<p>Need to create an account? <a href="/signup">Sign Up Page</a></p>
