@@ -47,6 +47,13 @@ class UsersController < ApplicationController
     end
 
     #show page
-    
+    get '/users/:slug' do
+        @user =User.find_by_slug(params[:slug])
+        if current_user == @user
+            erb :'/users/show'
+        else
+            redirect to '/workouts'
+        end
+    end
 
 end

@@ -1,0 +1,12 @@
+<h1>Welcome, <%= @user.username %>!</h1>
+
+<h3><a href="/workouts">Public Feed</a></h3>
+<h3><a href="/workouts/new">Create a New Workout</a></h3>
+<h3><a href="/logout">Log out</a></h3>
+
+<h2><%= @user.username %>'s Workouts:</h2>
+
+<% @user.workouts.each do |workout| %>
+    <a href="/workouts/<%=wod.id%>"> <%=wod.content%></a>
+    <br/>
+<% end %>
