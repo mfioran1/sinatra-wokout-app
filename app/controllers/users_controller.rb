@@ -15,18 +15,19 @@ class UsersController < ApplicationController
             redirect '/signup'
         else
             @user = User.create(
-                :username => params[:username]
-                :email => params[:email]
+                :username => params[:username],
+                :email => params[:email],
                 :password => params[:password]
             )
             session[:user_id] = @user.id 
+            @user.save
             redirect to '/workouts'
         end
     end
 
     #login page
     get '/login' do
-      if logged_in
+      if logged_in?
         @user = current_user
         redirect to "/users/#{@user.slug}"
       else
@@ -38,7 +39,7 @@ class UsersController < ApplicationController
     post '/login' do
         @user = User.find_by(username: params[:username])
         if @user && @user.authenticate(params[:password])
-            session[:user_id] = user.id
+            session[:user_id] = @user.id
             redirect to "/users/#{@user.slug}"
         else
             flash[:message] = "***Incorrect username or password, please try again!***"

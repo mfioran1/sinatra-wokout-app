@@ -1,0 +1,36 @@
+<h1>Workout - <%= @workout.title %></h1>
+<hr />
+<br />
+
+
+  <h4><a href = "/workouts/new" >Write a new Workout</a></h4>
+  <h4><a href='/workouts/<%= @workout.id %>/edit'>Edit Workout</a></h4>
+  <h4><a href="/users/<%=current_user.slug%>">Workout Profile</a></h4>
+  <h4><a href = "/workouts">Workout Feed</a></h4>
+  <h4><a href = "/logout" >Logout</a></h4>
+
+
+<% if flash.has?(:edit) %>
+  <%= flash[:edit]%>
+<% end %>
+
+<h2>Details of this Workout:</h2>
+    <br />
+
+    <p><strong>Duration:</strong> <%= @workout.duration %> -- <strong>Level:</strong> <%= @workout.level %></p>
+ 
+    <br />
+  
+    <h3>Exercise Details:</h3>
+      <p><%= @workout.details %></p>
+    <h3>Comments, Thoughts, Strategies, Goals:</h3>
+      <p><%= @workout.comments %></p>
+  
+
+<% if @workout.user_id == current_user.id %>
+  <form method="post" action="/workouts/<%=@workout.id%>">
+    <input id="hidden" type="hidden" name="_method" value="delete">
+
+    <input type="submit" value="Delete Workout">
+  </form>
+<% end %>

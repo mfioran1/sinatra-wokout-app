@@ -1,0 +1,44 @@
+<h1>Create Workout!</h1>
+
+
+  <h4><a href="/users/<%=current_user.slug%>">WOD Profile</a></h4>
+  <h4><a href = "/workouts">Workout Feed</a></h4>
+  <h4><a href = "/logout" >Logout</a></h4>
+
+
+<form action="/workouts" method="POST">
+
+  <h3>Please enter your new workout below</h3>
+
+  <label>Workout Title:</label>
+  <br></br>
+  <input type="text" name="title" required>
+  <br></br>
+
+  <label>Workout Duration:</label>
+  <br></br>
+  <input type="text" name="duration" placeholder="ex: 1hr 30min" required>
+  <br></br>
+
+  <label>Workout Level:</label>
+  <br></br>
+  <!-- <input type="text" name="level" placeholder="ex: Beginner, Intermediate, Expert" required> -->
+  <select name="level" required>
+    <option value="Beginner">Beginner</option>
+    <option value="Intermediate">Intermediate</option>
+    <option value="Expert">Expert</option>
+  </select>
+  <br></br>
+
+  <label>Details: Include type of exercise, sets, reps, etc.</label>
+  <br></br>
+  <textarea name="details" rows="4" cols="50" required></textarea>
+  <br></br>
+
+  <label>Comments: Did you hit your goals? Thoughts, Strategies and Tips.</label>
+  <br></br>
+  <textarea name="comments" rows="4" cols="50"></textarea>
+  <br></br>
+
+  <input type="submit" value="Submit Workout">
+</form>

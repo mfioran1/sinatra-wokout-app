@@ -7,7 +7,7 @@
 <h2>Public Workout Feed</h2>
 
 <% Workout.all.each do |workout| %>
-    <a href="/workouts/<%=workout.id%>"><%= workout.user.username %> - <%= workout.content %> - <%= workout.level %></a>
+    <a href="/workouts/<%=workout.id%>"><%= workout.user.username %> - <%= workout.title %> - <%= workout.level %></a>
     <br/>
 
 <% end %>    

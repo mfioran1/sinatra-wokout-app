@@ -1,0 +1,29 @@
+<h1>Edit Workout</h1>
+
+<form action="/workouts/<%= @workout.id %>" method="POST">
+<input id="hidden" type="hidden" name="_method" value="patch">
+
+  <h3><em>Please edit your Workout below</em></h3>
+
+  <label>Workout Title:</label>
+    <br></br>
+    <input type="text" name="title" value="<%= @workout.title %>">
+    <br></br>
+  <label>Workout Duration:</label>
+    <br />
+    <input type="text" name="duration" value="<%= @workout.duration %>">
+    <br />
+  <label>Workout Level:</label>
+    <br></br>
+    <input type="text" name="level" value="<%= @workout.level %>">
+    <br></br>
+  <label>Details: Exercises, Sets, Reps, etc.</label>
+    <br />
+    <textarea name="details" rows="4" cols="50"><%= @workout.details %></textarea>
+    <br></br>
+  <label>Comments: Did you hit your goals? Thoughts, Strategies and Tips.</label>
+    <br></br>
+    <textarea name="comments" rows="4" cols="50"><%= @workout.comments %></textarea>
+    <br></br>
+  <input type="submit" value="submit">
+</form>
