@@ -15,7 +15,6 @@ GEM
     bcrypt (3.1.13)
     bond (0.5.1)
     coderay (1.1.2)
-    colorize (0.8.1)
     concurrent-ruby (1.1.6)
     daemons (1.3.1)
     eventmachine (1.2.7)
@@ -28,7 +27,7 @@ GEM
     pry (0.13.1)
       coderay (~> 1.1)
       method_source (~> 1.0)
-    rack (2.2.2)
+    rack (2.2.3)
     rack-flash3 (1.0.5)
       rack
     rack-protection (2.0.8.1)
@@ -78,7 +77,6 @@ PLATFORMS
 DEPENDENCIES
   activerecord (~> 6.0.0)
   bcrypt
-  colorize
   pry
   rack-flash3
   rake
